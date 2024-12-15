@@ -1,1 +1,1 @@
-## NikoOS Official Website by scropoolISreal
+## NikoOS Official Website
