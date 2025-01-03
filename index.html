@@ -22,15 +22,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #007bff;
-            --transition-speed: 0.3s;
-            --gradient-light: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            --bg-light: url('res/light_bg.jpg');
-            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            --bg-dark: url('res/dark_bg.jpg');
-        }
+    :root {
+        --primary-color: #4CAF50;
+        --secondary-color: #007bff;
+        --transition-speed: 0.3s;
+        --gradient-light: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
 
         * {
             box-sizing: border-box;
@@ -38,60 +36,52 @@
             padding: 0;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            transition: background-image var(--transition-speed), backdrop-filter var(--transition-speed);
-        }
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        transition: background var(--transition-speed), color var(--transition-speed);
+    }
 
-        body.light-theme {
-            background-image: var(--bg-light);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            backdrop-filter: blur(5px);
-            color: #333;
-        }
+    body.light-theme {
+        background: var(--gradient-light);
+        color: #333;
+    }
 
-        body.dark-theme {
-            background-image: var(--bg-dark);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            backdrop-filter: blur(5px);
-            color: #f4f4f4;
-        }
+    body.dark-theme {
+        background: var(--gradient-dark);
+        color: #f4f4f4;
+    }
 
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+    }
 
-        .theme-toggle {
-            background: none;
-            border: 2px solid currentColor;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            transition: all var(--transition-speed);
-        }
+    .theme-toggle {
+        background: none;
+        border: 2px solid currentColor;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        transition: all var(--transition-speed);
+    }
 
-        .theme-toggle:hover {
-            transform: rotate(30deg) scale(1.1);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
+    .theme-toggle:hover {
+        transform: rotate(30deg) scale(1.1);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+        
         .container {
             max-width: 1000px;
             margin: 100px auto 20px;
