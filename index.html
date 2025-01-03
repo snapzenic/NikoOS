@@ -278,6 +278,13 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .active {
+        color: red;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+        
     </style>
 </head>
 <body class="light-theme">
@@ -540,8 +547,24 @@ NikoOS, modern sistemlerde yüksek performans ve güvenliği bir araya getiren h
     });
 });
 
+    
+    const anchors = document.querySelectorAll('a[href^="#"]');
 
+    
+    anchors.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            anchors.forEach(a => a.classList.remove('active'));
+            
+            this.classList.add('active');
 
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+        
 document.querySelectorAll('.download-btn').forEach(button => {
     button.addEventListener('click', function() {
         const spinner = document.createElement('div');
